@@ -34,7 +34,6 @@
     <string name="deviceTypeLabel2">Angel</string>
     <string name="pebble2DisplayName">Pebble</string>
     <string name="phoneServiceDisplayName">Phone</string>
-    <string name="polarDisplayName">Polar</string>
     <string name="disabledText">NA</string>
 
     <!--Status texts-->
