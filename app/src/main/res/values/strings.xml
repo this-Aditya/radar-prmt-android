@@ -34,6 +34,7 @@
     <string name="deviceTypeLabel2">Angel</string>
     <string name="pebble2DisplayName">Pebble</string>
     <string name="phoneServiceDisplayName">Phone</string>
+    <string name="polarDisplayName">Polar</string>
     <string name="disabledText">NA</string>
 
     <!--Status texts-->
@@ -150,4 +151,5 @@
     <string name="hundred_percent">100%</string>
     <string name="reject_privacy_policy_button">Reject</string>
     <string name="consent">Consent</string>
+    <string name="filter_split_regex">,</string>
 </resources>
