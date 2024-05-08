@@ -146,13 +146,13 @@ class RadarServiceImpl : RadarService() {
             AlarmManager.RTC_WAKEUP,
             calendar.timeInMillis,
             updateCheckInterval,
-            updateCheckAlarmIntent
+            updateCheckAlarmIntent!!
         )
     }
 
     private fun cancelUpdateCheckAlarmManager(){
         if(updateCheckAlarmManager != null && updateCheckAlarmIntent != null) {
-            updateCheckAlarmManager!!.cancel(updateCheckAlarmIntent)
+            updateCheckAlarmManager!!.cancel(updateCheckAlarmIntent!!)
         }
     }
 
