@@ -36,6 +36,9 @@ import org.radarbase.monitor.application.ApplicationStatusProvider
 import org.radarbase.passive.audio.OpenSmileAudioProvider
 import org.radarbase.passive.bittium.FarosProvider
 import org.radarbase.passive.empatica.E4Provider
+import org.radarbase.passive.google.activity.GoogleActivityProvider
+import org.radarbase.passive.google.places.GooglePlacesProvider
+import org.radarbase.passive.google.sleep.GoogleSleepProvider
 import org.radarbase.passive.phone.PhoneBluetoothProvider
 import org.radarbase.passive.phone.PhoneContactListProvider
 import org.radarbase.passive.phone.PhoneLocationProvider
@@ -71,6 +74,9 @@ class RadarServiceImpl : RadarService() {
         PhoneLogProvider(this),
         PhoneUsageProvider(this),
         WeatherApiProvider(this),
+        GoogleActivityProvider(this),
+        GoogleSleepProvider(this),
+        GooglePlacesProvider(this)
     )
 
     override val servicePermissions: List<String>
@@ -146,13 +152,13 @@ class RadarServiceImpl : RadarService() {
             AlarmManager.RTC_WAKEUP,
             calendar.timeInMillis,
             updateCheckInterval,
-            updateCheckAlarmIntent
+            updateCheckAlarmIntent!!
         )
     }
 
     private fun cancelUpdateCheckAlarmManager(){
         if(updateCheckAlarmManager != null && updateCheckAlarmIntent != null) {
-            updateCheckAlarmManager!!.cancel(updateCheckAlarmIntent)
+            updateCheckAlarmManager!!.cancel(updateCheckAlarmIntent!!)
         }
     }
 

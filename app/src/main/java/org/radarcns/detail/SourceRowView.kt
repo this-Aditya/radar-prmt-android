@@ -183,6 +183,6 @@ class SourceRowView internal constructor(
 
     companion object {
         private val logger = LoggerFactory.getLogger(SourceRowView::class.java)
-        private const val sourceStatusIconDefault = R.drawable.status_searching
+        private val sourceStatusIconDefault = R.drawable.status_searching
     }
 }
