@@ -19,8 +19,6 @@ package org.radarcns.detail
 import android.Manifest.permission.RECEIVE_BOOT_COMPLETED
 import android.Manifest.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
 import android.Manifest.permission.SYSTEM_ALERT_WINDOW
-import android.os.Build
-import org.radarbase.android.RadarConfiguration
 import org.radarbase.android.RadarConfiguration.Companion.START_AT_BOOT
 import org.radarbase.android.RadarService
 import org.radarbase.android.config.SingleRadarConfiguration
@@ -36,10 +34,9 @@ import org.radarbase.passive.phone.PhoneBluetoothProvider
 import org.radarbase.passive.phone.PhoneContactListProvider
 import org.radarbase.passive.phone.PhoneLocationProvider
 import org.radarbase.passive.phone.PhoneSensorProvider
+import org.radarbase.passive.polar.PolarProvider
 import org.radarbase.passive.phone.usage.PhoneUsageProvider
 import org.radarbase.passive.weather.WeatherApiProvider
-import org.radarbase.passive.polar.PolarProvider
-
 
 class RadarServiceImpl : RadarService() {
     override val plugins: List<SourceProvider<*>> = listOf(
