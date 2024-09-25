@@ -45,6 +45,7 @@ import org.radarbase.passive.phone.PhoneLocationProvider
 import org.radarbase.passive.phone.PhoneSensorProvider
 import org.radarbase.passive.phone.telephony.PhoneLogProvider
 import org.radarbase.passive.phone.usage.PhoneUsageProvider
+import org.radarbase.passive.phone.audio.input.PhoneAudioInputProvider
 import org.radarbase.passive.weather.WeatherApiProvider
 import org.radarcns.detail.UpdatesActivity.Companion.DAY
 import org.radarcns.detail.UpdatesActivity.Companion.LAST_AUTO_UPDATE_CHECK_TIME_KEY
@@ -76,7 +77,8 @@ class RadarServiceImpl : RadarService() {
         WeatherApiProvider(this),
         GoogleActivityProvider(this),
         GoogleSleepProvider(this),
-        GooglePlacesProvider(this)
+        GooglePlacesProvider(this),
+        PhoneAudioInputProvider(this)
     )
 
     override val servicePermissions: List<String>
