@@ -46,6 +46,7 @@ import org.radarbase.passive.phone.PhoneSensorProvider
 import org.radarbase.passive.phone.telephony.PhoneLogProvider
 import org.radarbase.passive.phone.usage.PhoneUsageProvider
 import org.radarbase.passive.phone.audio.input.PhoneAudioInputProvider
+import org.radarbase.passive.polar.PolarProvider
 import org.radarbase.passive.weather.WeatherApiProvider
 import org.radarcns.detail.UpdatesActivity.Companion.DAY
 import org.radarcns.detail.UpdatesActivity.Companion.LAST_AUTO_UPDATE_CHECK_TIME_KEY
@@ -68,6 +69,7 @@ class RadarServiceImpl : RadarService() {
         OpenSmileAudioProvider(this),
         E4Provider(this),
         FarosProvider(this),
+        PolarProvider(this),
         PhoneBluetoothProvider(this),
         PhoneContactListProvider(this),
         PhoneLocationProvider(this),
