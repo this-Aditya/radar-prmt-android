@@ -22,6 +22,14 @@
 <!--  TODO: Check if necessary  -->
     <uses-permission android:name="android.permission.SET_ALARM"/>
 
+    <!-- Foreground service types permissions (for targeting devices running on android 14 and above) -->
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_CONNECTED_DEVICE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_DATA_SYNC" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_HEALTH" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_LOCATION" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_MICROPHONE" />
+    <uses-permission android:name="android.permission.FOREGROUND_SERVICE_SPECIAL_USE" />
+
     <supports-screens android:largeScreens="true"
         android:xlargeScreens="true" />
 
@@ -121,7 +129,14 @@
             android:screenOrientation="userPortrait"
             android:parentActivityName=".MainActivityImpl" />
 
-        <service android:name=".RadarServiceImpl" />
+        <service
+            android:name=".RadarServiceImpl"
+            android:exported="false"
+            android:foregroundServiceType="dataSync|health|location|microphone|specialUse|connectedDevice" >
+            <property android:name="android.app.PROPERTY_SPECIAL_USE_FGS_SUBTYPE"
+                android:value="@string/special_fgs_explanation"/>
+        </service>
+
         <service android:name=".AuthServiceImpl" />
 
         <receiver android:name=".UpdateAlarmReceiver" />
