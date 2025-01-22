@@ -19,8 +19,6 @@ package org.radarcns.detail
 import android.Manifest.permission.RECEIVE_BOOT_COMPLETED
 import android.Manifest.permission.REQUEST_IGNORE_BATTERY_OPTIMIZATIONS
 import android.Manifest.permission.SYSTEM_ALERT_WINDOW
-import android.os.Build
-import org.radarbase.android.RadarConfiguration
 import org.radarbase.android.RadarConfiguration.Companion.START_AT_BOOT
 import org.radarbase.android.RadarService
 import org.radarbase.android.config.SingleRadarConfiguration
@@ -29,10 +27,15 @@ import org.radarbase.monitor.application.ApplicationStatusProvider
 import org.radarbase.passive.audio.OpenSmileAudioProvider
 import org.radarbase.passive.bittium.FarosProvider
 import org.radarbase.passive.empatica.E4Provider
+import org.radarbase.passive.google.activity.GoogleActivityProvider
+import org.radarbase.passive.google.places.GooglePlacesProvider
+import org.radarbase.passive.google.sleep.GoogleSleepProvider
 import org.radarbase.passive.phone.PhoneBluetoothProvider
 import org.radarbase.passive.phone.PhoneContactListProvider
 import org.radarbase.passive.phone.PhoneLocationProvider
 import org.radarbase.passive.phone.PhoneSensorProvider
+import org.radarbase.passive.phone.audio.input.PhoneAudioInputProvider
+//import org.radarbase.passive.polar.PolarProvider
 import org.radarbase.passive.phone.usage.PhoneUsageProvider
 import org.radarbase.passive.weather.WeatherApiProvider
 
@@ -42,12 +45,17 @@ class RadarServiceImpl : RadarService() {
         OpenSmileAudioProvider(this),
         E4Provider(this),
         FarosProvider(this),
+//        PolarProvider(this),
         PhoneBluetoothProvider(this),
         PhoneContactListProvider(this),
         PhoneLocationProvider(this),
         PhoneSensorProvider(this),
         PhoneUsageProvider(this),
         WeatherApiProvider(this),
+        GoogleActivityProvider(this),
+        GoogleSleepProvider(this),
+        GooglePlacesProvider(this),
+        PhoneAudioInputProvider(this)
     )
 
     override val servicePermissions: List<String>

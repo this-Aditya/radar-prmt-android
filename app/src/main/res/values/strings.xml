@@ -34,6 +34,7 @@
     <string name="deviceTypeLabel2">Angel</string>
     <string name="pebble2DisplayName">Pebble</string>
     <string name="phoneServiceDisplayName">Phone</string>
+    <string name="polarDisplayName">Polar</string>
     <string name="disabledText">NA</string>
 
     <!--Status texts-->
@@ -76,6 +77,7 @@
     <string name="login_failed_firebase">Settings are incomplete. Please update the Firebase Remote Configuration</string>
     <string name="login_failed_connection">No network connection available. Please connect your phone to the internet and try again.</string>
     <string name="login_failed_mp">Login failed. Please try again later.</string>
+    <string name="login_failed">Login failed. Please try again later.</string>
     <string name="no_connection">No internet connection available. Please make sure wifi and/or cellphone data is turned on.</string>
     <string name="info">About This App</string>
     <string name="radar_prmt_title">RADAR pRMT</string>
@@ -149,4 +151,6 @@
     <string name="hundred_percent">100%</string>
     <string name="reject_privacy_policy_button">Reject</string>
     <string name="consent">Consent</string>
+    <string name="filter_split_regex">,</string>
+    <string name="special_fgs_explanation">RadarService operates with plugins and modules that may need permissions beyond standard foreground service types. Defining a special use subtype ensures compliance with Android’s requirements for permissions that may vary dynamically based on active plugins</string>
 </resources>
